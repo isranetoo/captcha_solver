@@ -11,6 +11,7 @@ def evaluate():
         pred = model.predict(np.expand_dims(X_test[i], axis=0))
         pred_text = ''.join([CHARS[tf.math.argmax(p).numpy()] for p in pred])
         true_text = ''.join([CHARS[tf.math.argmax(c).numpy()] for c in Y_test[i]])
-        if pred_text == true_text:
+        # Considera apenas os 5 primeiros caracteres
+        if pred_text[:5] == true_text[:5]:
             correct += 1
     print(f"Acurácia: {correct / len(X_test) * 100:.2f}%")

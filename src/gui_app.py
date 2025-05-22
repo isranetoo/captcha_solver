@@ -25,7 +25,8 @@ class CaptchaGUI:
             self.img = ImageTk.PhotoImage(img)
             self.img_label.configure(image=self.img)
             pred = predict(file_path)
-            self.result.config(text=f"Resultado: {pred}")
+            # Mostra apenas os 5 primeiros caracteres
+            self.result.config(text=f"Resultado: {pred[:5]}")
 
 if __name__ == "__main__":
     root = tk.Tk()

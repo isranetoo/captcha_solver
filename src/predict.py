@@ -7,6 +7,7 @@ import string
 
 
 
+
 CHARS = string.ascii_uppercase + string.digits
 
 def predict(path):
@@ -14,4 +15,6 @@ def predict(path):
     image = preprocess_image(path)
     image = np.expand_dims(image, axis=(0, -1))
     pred = model.predict(image)
-    return ''.join([CHARS[tf.math.argmax(p).numpy()] for p in pred])
+    # pred is a list of 5 arrays, each shape (1, num_classes)
+    pred_indices = [np.argmax(p[0]) for p in pred]
+    return ''.join([CHARS[i] for i in pred_indices])

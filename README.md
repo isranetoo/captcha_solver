@@ -49,33 +49,33 @@ O fluxo principal do projeto é:
 7. **Interface gráfica**: Permite ao usuário selecionar uma imagem e ver o resultado da predição.
 8. **Análise de dados e erros**: Notebooks Jupyter para explorar o dataset e analisar o desempenho dos modelos.
 
-## How to use
+## Como usar
 
-### 1. Data Collection
-Run the script to collect CAPTCHA images and label them manually:
+### 1. Coleta de Dados
+Execute o script para coletar imagens de CAPTCHA e rotulá-las manualmente:
 ```bash
 python src/collector.py
 ```
-The images will be saved in `dataset/train/` with the filename equal to the CAPTCHA text.
+As imagens serão salvas em `dataset/train/` com o nome do arquivo igual ao texto do CAPTCHA.
 
-### 2. Preprocessing
-Preprocessing is done automatically during data loading for training and prediction.
+### 2. Preprocessamento
+O preprocessamento é feito automaticamente durante o carregamento dos dados para treinamento e predição.
 
-### 3. Augmentation (optional)
-Implement or adapt the script `src/augment.py` to increase the dataset with variations of the original images.
+### 3. Aumento de Dados (opcional)
+Implemente ou adapte o script `src/augment.py` para aumentar o conjunto de dados com variações das imagens originais.
 
-### 4. Model Training
-To train the CNN model (fixed at 5 characters):
+### 4. Treinamento do Modelo
+Para treinar o modelo CNN (fixo em 5 caracteres):
 ```bash
 python src/train.py
 ```
-Output: `captcha_model.h5`
+Saída: `captcha_model.h5`
 
-To train the CRNN model (variable length):
+Para treinar o modelo CRNN (comprimento variável):
 ```bash
 python src/train_ctc.py
 ```
-Output: `captcha_crnn.h5`
+Saída: `captcha_crnn.h5`
 
 ### 5. Avaliação
 Avalie o desempenho do modelo CNN:

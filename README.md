@@ -6,12 +6,6 @@ Este projeto é uma solução completa para automação e resolução de CAPTCHA
 
 ## 📁 Estrutura do Projeto
 ```
-├── captcha_model.h5
-├── captcha_model.tflite
-├── LICENSE
-├── README.md
-├── run_all.py
-├── training_history.npy
 ├── analysis/
 │   └── plot_training.py
 ├── captcha_generator/
@@ -38,6 +32,12 @@ Este projeto é uma solução completa para automação e resolução de CAPTCHA
 │   ├── preprocess.py
 │   ├── train_ctc.py
 │   └── train.py
+├── captcha_model.h5
+├── captcha_model.tflite
+├── LICENSE
+├── README.md
+├── run_all.py
+├── training_history.npy
 ```
 
 ---

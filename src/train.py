@@ -46,8 +46,10 @@ def train_model():
     X_train, Y_train = load_dataset("dataset/train")
     X_test, Y_test = load_dataset("dataset/test")
     model = create_model(num_chars=5, num_classes=len(CHARS))
-    model.fit(X_train, Y_train, validation_data=(X_test, Y_test), epochs=20, batch_size=32)
+    history = model.fit(X_train, Y_train, validation_data=(X_test, Y_test), epochs=20, batch_size=32)
     model.save("captcha_model.h5")
+    # Salva o histórico do treinamento para análise futura
+    np.save("training_history.npy", history.history)
 
 if __name__ == "__main__":
     train_model()

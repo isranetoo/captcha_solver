@@ -1,4 +1,8 @@
+
 # evaluate.py
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import tensorflow as tf
 from src.train import load_dataset, CHARS
 import numpy as np

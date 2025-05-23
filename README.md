@@ -1,30 +1,43 @@
 # captcha_solver
 
-Este projeto é uma solução completa para automação e resolução de CAPTCHAs utilizando inteligência artificial. Ele abrange desde a coleta de dados, preprocessamento, aumento de dados (augmentation), treinamento de modelos (CNN e CRNN), avaliação, exportação para uso em dispositivos móveis e interface gráfica para uso prático.
+Este projeto é uma solução completa para automação e resolução de CAPTCHAs utilizando inteligência artificial. Agora, o sistema suporta tanto CAPTCHAs de tamanho fixo (usando CNN) quanto de tamanho variável (usando CRNN com CTC Loss). O fluxo cobre desde a coleta de dados, preprocessamento automático, aumento de dados, treinamento, avaliação, exportação para dispositivos móveis e interface gráfica para uso prático.
 
 ---
 
 ## 📁 Estrutura do Projeto
 ```
-captcha_solver/
-├── dataset/                # Imagens rotuladas para treino e teste
-│   ├── train/
-│   └── test/
-├── notebooks/             # Análises e visualizações em Jupyter
-│   ├── exploratory_analysis.ipynb
-│   └── error_analysis.ipynb
-├── src/                   # Código-fonte do projeto
-│   ├── augment.py         # Geração de dados aumentados
-│   ├── collector.py       # Coletor de CAPTCHAs via URL
-│   ├── evaluate.py        # Avaliação da acurácia do modelo
-│   ├── export.py          # Exportação do modelo para TFLite
-│   ├── gui_app.py         # Aplicação com interface gráfica (Tkinter)
-│   ├── model.py           # Modelo CNN
-│   ├── model_crnn.py      # Modelo CRNN (para CTC)
-│   ├── predict.py         # Predição de novos CAPTCHAs
-│   ├── preprocess.py      # Preprocessamento das imagens
-│   ├── train.py           # Treinamento CNN
-│   └── train_ctc.py       # Treinamento CRNN (CTC Loss)
+├── captcha_model.h5
+├── captcha_model.tflite
+├── LICENSE
+├── README.md
+├── run_all.py
+├── training_history.npy
+├── analysis/
+│   └── plot_training.py
+├── captcha_generator/
+│   ├── generate_captcha.py
+│   ├── fonts/
+│   │   └── DejaVuSans.ttf
+│   └── output/
+├── dataset/
+│   ├── test/
+│   └── train/
+├── notebooks/
+│   ├── error_analysis.ipynb
+│   └── exploratory_analysis.ipynb
+├── src/
+│   ├── __init__.py
+│   ├── augment.py
+│   ├── collector.py
+│   ├── evaluate.py
+│   ├── export.py
+│   ├── gui_app.py
+│   ├── model_crnn.py
+│   ├── model.py
+│   ├── predict.py
+│   ├── preprocess.py
+│   ├── train_ctc.py
+│   └── train.py
 ```
 
 ---

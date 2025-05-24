@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 # Caminhos
 BASE_DIR = os.path.dirname(__file__)
-FONT_PATH = os.path.join(BASE_DIR, "fonts", "DejaVuSans.ttf")
+FONT_PATH = os.path.join(BASE_DIR, "fonts", "Inconsolata-Regular.ttf")
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -27,7 +27,8 @@ def gerar_captcha(texto, nome_arquivo):
     x = 10
     for char in texto:
         y = random.randint(0, 10)
-        draw.text((x, y), char, font=fonte, fill=0)
+        cor_letra = random.choice([70, 140])  # cinza escuro ou claro
+        draw.text((x, y), char, font=fonte, fill=cor_letra)
         x += 20  # espaçamento horizontal ajustado
 
     # Círculos de interferência
@@ -35,7 +36,9 @@ def gerar_captcha(texto, nome_arquivo):
         x0 = random.randint(0, largura)
         y0 = random.randint(0, altura)
         d = random.randint(12, 35)
-        draw.ellipse((x0, y0, x0 + d, y0 + d), outline=0)
+        cor_circulo = random.choice([80, 150])  # cinza escuro ou claro
+        espessura = random.randint(1, 2)  # espessura aleatória
+        draw.ellipse((x0, y0, x0 + d, y0 + d), outline=cor_circulo, width=espessura)
 
     # Suavização leve
     imagem = imagem.filter(ImageFilter.GaussianBlur(0.3))
@@ -52,4 +55,4 @@ def gerar_lote(qtd=10):
         gerar_captcha(texto, f"{texto}.png")
 
 if __name__ == "__main__":
-    gerar_lote(10000)
+    gerar_lote(1)

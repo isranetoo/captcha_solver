@@ -1,5 +1,9 @@
 # captcha_solver
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/your-github-username/your-repo/main/logo.png" alt="captcha_solver logo" width="220"/>
+</p>
+
 Este projeto é uma solução completa para automação e resolução de CAPTCHAs utilizando inteligência artificial. Agora, o sistema suporta tanto CAPTCHAs de tamanho fixo (usando CNN) quanto de tamanho variável (usando CRNN com CTC Loss). O fluxo cobre desde a coleta de dados, preprocessamento automático, aumento de dados, treinamento, avaliação, exportação para dispositivos móveis e interface gráfica para uso prático.
 
 ---
